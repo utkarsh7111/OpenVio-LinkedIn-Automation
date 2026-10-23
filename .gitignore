@@ -1,0 +1,26 @@
+# Secrets
+.env
+.env.*
+!.env.example
+!.env.*.example
+*.pem
+*.key
+
+# Dependencies and build output
+node_modules/
+.next/
+dist/
+coverage/
+
+# Runtime data (uploads can appear under any package depending on the working directory)
+uploads/
+**/uploads/
+.npm-cache/
+**/.npm-cache/
+*.tsbuildinfo
+backend/.test-results/
+npm-debug.log*
+.DS_Store
+
+# Provider CA certificates and any local key material
+certs/

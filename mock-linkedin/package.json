@@ -1,0 +1,20 @@
+{
+  "name": "openvio-mock-linkedin",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "start": "tsx server.ts",
+    "manual:flow": "tsx scripts/manual-flow.ts",
+    "test": "node --import tsx --test test/mock-linkedin.test.ts",
+    "check": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@types/node": "^26.6.5",
+    "tsx": "^4.23.15",
+    "typescript": "^7.0.2"
+  }
+}

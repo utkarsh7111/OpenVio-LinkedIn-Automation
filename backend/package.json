@@ -1,0 +1,42 @@
+{
+  "name": "openvio-linkedin-backend",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/server.js",
+    "dev": "tsx watch src/server.ts",
+    "migrate": "tsx src/db/migrate.ts up",
+    "migrate:down": "tsx src/db/migrate.ts down",
+    "seed": "tsx src/db/seed.ts",
+    "demo:connection": "tsx scripts/connection-browser-demo.ts",
+    "manual:linkedin": "tsx scripts/manual-linkedin-service.ts",
+    "manual:scheduler": "tsx scripts/manual-scheduler-demo.ts",
+    "test": "node --import tsx --test",
+    "check": "tsc --noEmit && tsc -p tsconfig.all.json --noEmit && tsx ../scripts/verify-typescript-only.ts",
+    "check:ts-only": "tsx ../scripts/verify-typescript-only.ts",
+    "audit": "npm audit --omit=dev"
+  },
+  "dependencies": {
+    "@google/genai": "^2.30.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "express-rate-limit": "^7.5.1",
+    "helmet": "^8.0.0",
+    "pg": "^8.13.1",
+    "zod": "^4.6.7"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.19",
+    "@types/express": "^5.0.6",
+    "@types/node": "^26.6.5",
+    "@types/pg": "^8.23.1",
+    "tsx": "^4.23.15",
+    "typescript": "^7.0.2"
+  }
+}
