@@ -1,75 +1,54 @@
-# OpenVio LinkedIn Automation
+# OpenVio - LinkedIn Automation
 
-A full-stack LinkedIn post management and automation tool built with Next.js, Express, and PostgreSQL. It allows users to connect their LinkedIn account, compose AI-assisted posts, upload multiple media formats (images, videos, and documents), schedule posts, and publish directly to LinkedIn.
-
----
-
-## Features
-
-- **Multi-Image Posts**: Upload up to 20 images with primary thumbnail cover selection and reordering.
-- **Video & Document Support**: Native video uploading with chunked finalization and PDF/document carousels.
-- **AI Post Enhancer**: Generate or polish post drafts using Gemini or OpenAI.
-- **Post Scheduling**: Schedule posts with automated retry on network or rate-limit failures.
-- **Real & Mock Modes**: Test offline with a built-in mock server, or connect to real LinkedIn via OAuth 2.0.
-- **Live Feed Simulation**: Real-time desktop and mobile post preview card.
+A modern full-stack web application to create, preview, schedule, and publish posts to LinkedIn with support for multiple images, videos, and documents.
 
 ---
 
-## Tech Stack
+## 🚀 Features
 
-- **Frontend**: Next.js 14, React, TypeScript, Tailwind CSS
+- **Media Publishing**: Upload up to 20 images with primary thumbnail cover selection, native chunked video uploads, and PDF documents.
+- **Live Preview**: Real-time LinkedIn post preview (desktop & mobile) before publishing.
+- **AI Assistant**: Generate and polish post captions using AI.
+- **Post Scheduling**: Schedule posts with automated background publishing.
+- **Mock & Real Modes**: Test locally offline with a built-in mock server, or connect to your real LinkedIn account.
+
+---
+
+## 🛠️ Tech Stack
+
+- **Frontend**: Next.js 14, React, Tailwind CSS, TypeScript
 - **Backend**: Node.js, Express, TypeScript
-- **Database**: PostgreSQL (Prisma / `pg` connection pool)
-- **APIs**: LinkedIn REST API (Posts, Images, Videos, Documents)
+- **Database**: PostgreSQL
+- **Integration**: LinkedIn REST APIs (Posts, Images, Videos, Documents)
 
 ---
 
-## Getting Started
+## ⚡ Quick Start
 
-### 1. Prerequisites
-
-- Node.js 20+
-- PostgreSQL database
-- (Optional) LinkedIn Developer App credentials
-
-### 2. Installation
-
-Clone the repository and install dependencies for each service:
+### 1. Clone & Install
 
 ```bash
 git clone https://github.com/utkarsh7111/OpenVio-LinkedIn-Automation.git
 cd OpenVio-LinkedIn-Automation
 
 # Install backend dependencies
-cd backend
-npm install
+cd backend && npm install
 
 # Install frontend dependencies
-cd ../frontend
-npm install
-
-# (Optional) Install mock-linkedin dependencies
-cd ../mock-linkedin
-npm install
+cd ../frontend && npm install
 ```
 
-### 3. Setup Environment Variables
+### 2. Configure Environment (`.env`)
 
-Copy the example environment file at the root:
-
-```bash
-cp .env.example .env
-```
-
-Open `.env` and fill in your database URL and credentials:
+Create a `.env` file in the root directory:
 
 ```env
 PORT=4000
 FRONTEND_URL=http://localhost:3000
-DATABASE_URL=postgres://user:password@localhost:5432/dbname
-TOKEN_ENCRYPTION_KEY=your_64_character_hex_key
+DATABASE_URL=postgresql://user:password@localhost:5432/openvio
+TOKEN_ENCRYPTION_KEY=0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef
 
-# Set mode to 'real' for live LinkedIn or 'mock' for local offline testing
+# Set to 'real' for live LinkedIn or 'mock' for local offline testing
 LINKEDIN_MODE=real
 LINKEDIN_CLIENT_ID=your_client_id
 LINKEDIN_CLIENT_SECRET=your_client_secret
@@ -78,58 +57,60 @@ LINKEDIN_API_BASE=https://api.linkedin.com
 ```
 
 Run database migrations:
-
 ```bash
 cd backend
 npm run migrate
-npm run seed
 ```
 
 ---
 
-## Running the Application
+## 🏃 Running the Project
 
-### 1. Backend API (Port 4000)
+Open two terminal windows:
 
+### Terminal 1: Backend
 ```bash
 cd backend
 npm run dev
 ```
+> Runs at `http://localhost:4000`
 
-### 2. Frontend (Port 3000)
-
-In a separate terminal:
-
+### Terminal 2: Frontend
 ```bash
 cd frontend
 npm run dev
 ```
+> Runs at `http://localhost:3000`
 
-### 3. (Optional) Mock LinkedIn Server (Port 4100)
-
-If using `LINKEDIN_MODE=mock`:
-
-```bash
-cd mock-linkedin
-npm start
-```
-
-Visit **[http://localhost:3000/dashboard/linkedin](http://localhost:3000/dashboard/linkedin)** in your browser.
+Open **[http://localhost:3000/dashboard/linkedin](http://localhost:3000/dashboard/linkedin)** in your browser!
 
 ---
 
-## Project Structure
+## 🧪 Testing with Mock LinkedIn (Optional)
+
+If you don't have LinkedIn API credentials, set `LINKEDIN_MODE=mock` in `.env` and run the mock server:
+
+```bash
+cd mock-linkedin
+npm install
+npm start
+```
+> Runs at `http://localhost:4100`
+
+---
+
+## 📁 Project Structure
 
 ```
-├── backend/          # Express API, auth, scheduling, and LinkedIn service
-├── frontend/         # Next.js 14 dashboard UI, composer, and preview card
-├── mock-linkedin/    # Local mock LinkedIn server for offline testing
-├── .env.example      # Environment variables template
+├── backend/          # Express API & LinkedIn integration
+├── frontend/         # Next.js UI dashboard & preview card
+├── mock-linkedin/    # Offline LinkedIn API simulator
+├── .env.example      # Sample environment variables
 └── README.md
 ```
 
 ---
 
-## License
+## 📄 License
 
 MIT
