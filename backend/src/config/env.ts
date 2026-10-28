@@ -7,6 +7,8 @@ import dotenv from 'dotenv';
 // Real environment variables always win over the file.
 const repoRoot = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '../../..');
 dotenv.config({ path: path.join(repoRoot, '.env'), quiet: true });
+dotenv.config({ path: path.resolve(process.cwd(), '.env'), quiet: true });
+dotenv.config({ path: path.resolve(process.cwd(), '../.env'), quiet: true });
 
 const KEY_PATTERN = /^[0-9a-fA-F]{64}$/;
 const PLACEHOLDER_KEY = /replace-with/i;
