@@ -4,7 +4,7 @@ A modern full-stack web application to create, preview, schedule, and publish po
 
 ---
 
-## 🚀 Features
+##  Features
 
 - **Media Publishing**: Upload up to 20 images with primary thumbnail cover selection, native chunked video uploads, and PDF documents.
 - **Live Preview**: Real-time LinkedIn post preview (desktop & mobile) before publishing.
@@ -14,7 +14,7 @@ A modern full-stack web application to create, preview, schedule, and publish po
 
 ---
 
-## 🛠️ Tech Stack
+##  Tech Stack
 
 - **Frontend**: Next.js 14, React, Tailwind CSS, TypeScript
 - **Backend**: Node.js, Express, TypeScript
@@ -23,7 +23,7 @@ A modern full-stack web application to create, preview, schedule, and publish po
 
 ---
 
-## ⚡ Quick Start
+##  Quick Start
 
 ### 1. Clone & Install
 
@@ -64,7 +64,7 @@ npm run migrate
 
 ---
 
-## 🏃 Running the Project
+##  Running the Project
 
 Open two terminal windows:
 
@@ -86,7 +86,7 @@ Open **[http://localhost:3000/dashboard/linkedin](http://localhost:3000/dashboar
 
 ---
 
-## 🧪 Testing with Mock LinkedIn (Optional)
+## Testing with Mock LinkedIn (Optional)
 
 If you don't have LinkedIn API credentials, set `LINKEDIN_MODE=mock` in `.env` and run the mock server:
 
@@ -99,7 +99,7 @@ npm start
 
 ---
 
-## 📁 Project Structure
+##  Project Structure
 
 ```
 ├── backend/          # Express API & LinkedIn integration
