@@ -109,8 +109,4 @@ npm start
 └── README.md
 ```
 
----
 
-## 📄 License
-
-MIT
